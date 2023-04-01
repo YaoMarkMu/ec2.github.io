@@ -1,4 +1,4 @@
-# FluidLab Project Site
+# EC^2 Project Site
 
 
 ## License
