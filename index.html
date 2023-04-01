@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="EC^2: Emergent Communication for Embodied Control.">
+  <meta name="keywords" content="Emergent Communication, Embodied Control, Robotics, Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FluidLab</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="./index.html">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Related Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://openreview.net/forum?id=Xyme9p1rpZw">
+            SoftZoo
+          </a>
+          <a class="navbar-item" href="https://roboninja.cs.columbia.edu/">
+            RoboNinja
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">EC^2: Emergent Communication for Embodied Control</h1>
+          <h3 class="title is-5 conference-authors">CVPR 2023</h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://yaomarkmu.github.io/">Yao Mu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ysymyth.github.io/">Shunyu Yao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://dingmyu.github.io/">Mingyu Ding</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://luoping.me/">Ping Luo</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan</a><sup>3, 4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Princeton University ,</span>
+            <span class="author-block"><sup>3</sup>MIT-IBM Watson AI Lab,</span>
+            <span class="author-block"><sup>4</sup>UMass Amherst</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=Cp-io_BoFaE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span>&nbsp;</span>
+              <span class="link-block">
+                <a href="https://github.com/zhouxian/FluidLab"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <video id="teaser" autoplay muted loop height="100%">
+        <source src="./static/videos/tasks.m4v"
+                type="video/mp4">
+          </video>
+          </br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+        <strong style="font-weight: 900;">FluidLab</strong> is a differentiable environment with a set of complex fluid manipulation tasks.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <video id="teaser" autoplay muted loop height="100%">
+        <source src="./static/videos/fluidengine.m4v"
+                type="video/mp4">
+          </video>
+          </br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+        FluidLab is powered by <strong style="font-weight: 900;">FluidEngine</strong>, a fully differentiable and multi-material physics engine, supporting rigid, elastic, plastic materials, inviscid and viscous liquid, and gaseous phenomena such as smoke.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container is-fullhd">
+  <hr class="solid">
+</div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans manipulate various kinds of fluids in their everyday life: creating latte art, scooping floating objects from water, rolling an ice cream cone, etc. Using robots to augment or replace human labors in these daily settings remain as a challenging task due to the multifaceted complexities of fluids. 
+          </p>
+          <p>
+            Previous research in robotic fluid manipulation mostly consider fluids governed by an ideal, Newtonian model in simple task settings (e.g., pouring water into a container). However, the vast majority of real-world fluid systems manifest their complexities in terms of the fluid’s complex material behaviors (e.g., elastoplastic deformation) and multi-component interactions (e.g. coffee and frothed milk when making latte art), both of which were well beyond the scope of the current literature. To evaluate robot learning algorithms on understanding and interacting with such complex fluid systems, a comprehensive virtual platform with versatile simulation capabilities and well-established tasks is needed. 
+          </p>
+          <p>
+            In this work, we introduce FluidLab, a simulation environment with a diverse set of manipulation tasks involving complex fluid dynamics. These tasks address interactions between solid and fluid as well as among multiple fluids. At the heart of our platform is a fully differentiable physics simulator, FluidEngine, providing GPU-accelerated simulations and gradient calculations for various material types and their couplings, extending the scope of the existing differentiable simulation engines. We identify several challenges for fluid manipulation learning by evaluating a set of reinforcement learning and trajectory optimization methods on our platform. To address these challenges, we propose several domain-specific optimization schemes coupled with differentiable physics, which are empirically shown to be effective in tackling optimization problems featured by fluid system’s non-convex and non-smooth properties.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+</section>
+
+<div class="container is-fullhd">
+  <hr class="solid">
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Real World Executions</h2>
+      </div>
+    </div>
+    <br> 
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Ice Cream</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ice_cream.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Gathering</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/gathering.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Latte Art</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/latte_art.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Mixing</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mixing.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div class="container is-fullhd">
+  <hr class="solid">
+</div>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Qualitative Results</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <p>
+          We evaluate trajectory optimization with differentiable physics (DP), sampling-based optimization methods (CMA-ES) as well as model-free RL algorithms including SAC and PPO, and show we can solve some quite challenging tasks reasonably well, using the gradient information provided by our simulation environment and the optimization scheme we proposed.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container is-max-desktop">
+    <!-- Button to toggle the collapsible content -->
+    <button class="collapsible">Click to show videos</button>
+
+    <div class="container is-max-desktop clp_content">
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Latte Art (via Pouring)</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/latteart.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/latteart_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteart_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteart_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteart_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteart_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Latte Art (via Stirring)</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/latteartstir.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteartstir_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteartstir_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteartstir_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteartstir_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/latteartstir_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Ice Cream (Static)</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/icecreamsimple.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecreamsimple_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecreamsimple_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecreamsimple_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecreamsimple_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecreamsimple_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Ice Cream (Dynamic)</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/icecream.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecream_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecream_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecream_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecream_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/icecream_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Transporting</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/transporting.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/transporting_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/transporting_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/transporting_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/transporting_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/transporting_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Mixing</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/mixing.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/mixing_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/mixing_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/mixing_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/mixing_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/mixing_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Pouring</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/pouring.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/pouring_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/pouring_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/pouring_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/pouring_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/pouring_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Gathering (Easy)</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/gathering.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gathering_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gathering_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gathering_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gathering_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gathering_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Gathering (Hard)</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/gatheringO.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gatheringO_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gatheringO_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gatheringO_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gatheringO_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/gatheringO_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Air Circulation</h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+
+            <img src="./static/videos/circulation.png"/>
+
+            <p><b>Goal</b></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/circulation_dp.mp4"></video>
+            <p>DP</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/circulation_dph.mp4"></video>
+            <p>DP-H</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/circulation_cmaes.mp4"></video>
+            <p>CMA-ES</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/circulation_sac.mp4"></video>
+            <p>SAC</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/circulation_ppo.mp4"></video>
+            <p>PPO</p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+<div class="container is-fullhd">
+  <hr class="solid">
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Validation Experiments for FluidEngine</h2>
+      </div>
+    </div>
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <p>
+         One useful way of validating simulation engines is to run simulation experiments and verify if the produced simulation results match known physical phenomena. Here we testify FluidEngine by running simulations and inspect if it can successfully reproduce a number of physical phenomena shown below.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container is-max-desktop">
+    <!-- Button to toggle the collapsible content -->
+    <button class="collapsible">Click to show videos</button>
+
+    <div class="container is-max-desktop clp_content">
+
+
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Kármán Vortex Street</h2>
+            <p>
+              When a flow of fluid is separated by blunt bodies, a repeating pattern of swirling vortices would appear due to vortex shedding. We simulate a flow of fluid flowing by a rigid cylinder and visualize the top-down view. We colorized the fluid around the cylinder, and it can be seen that our simulator can faithfully produce a street of vortices, typically known as the Kármán vortex street phenomenon.
+            </p>
+
+          </div>
+
+        </div>
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Dam Break</h2>
+            <p>
+             This is a classical engineering test case, where a fluid volume falls due to gravity and splashes within the domain. We successfully reproduced this phenomenon with our simulation engine.
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column is-one-half">
+          <div class="content has-text-centered">
+            <video autoplay controls muted loop playsinline height="100%" source data-src="./static/videos/karman_vortex.mp4"></video>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/dambreak_1.mp4"></video>
+            <p>Elastic</p>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/dambreak_2.mp4"></video>
+            <p>Elasto-plastic</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Magnus Effect</h2>
+            <p>
+             This is an observable phenomenon commonly associated with a spinning object moving through a fluid. The path of the spinning object is deflected in a manner not present when the object is not spinning. One example of such phenomenon seen in daily life is the screw shot in football playing. Here we simulate a spinning ball in a fluid body. It can be observed that the spinning motion produces a deflection in the motion trajectory of the ball, and the magnitude of the deflection has a correlation with the spinning velocity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/magnus_1.mp4"></video>
+            <p>Translation only</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/magnus_2.mp4"></video>
+            <p>Translation + slow CCW spinning</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/magnus_3.mp4"></video>
+            <p>Translational + fast CCW spining</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/magnus_4.mp4"></video>
+            <p>Translational + fast CW spining</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Buoyancy</h2>
+            <p>
+              We verify here if objects with different density in a liquid body would incur different magnitude of buoyancy. Here the red ball has a density of half of the water, where the blue ball shares the same density value of the water. It can be observed that the red ball would float on the water surface due to buoyancy.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Incompressibility and Volume Stability</h2>
+            <p>
+              Liquids are generally considered incompressible. Our MPM-based engine simulates weakly-compressible liquids, where the momentum and mass are updated every step via consecutive grid-particle-grid information transfer. We verify here that the simulated fluid bodies can maintain consistent pressure and volume through long-horizon simulations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/buoyancy.mp4"></video>
+          </div>
+        </div>
+
+        <div class="column is-full-width">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/incompress.mp4"></video>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Conservation of Momentum</h2>
+            <p>
+              When objects are in collision, their motions obey conservation of momentum. Here we test the collision of two objects with exactly the same mass on a frictionless floor, where it can be observed that they exchanged their momentum after the collision as expected.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Rayleigh–Taylor Instability</h2>
+            <p>
+              This phenomenon describes the instability of an interface between two fluids with different densities, which occurs when the heavy component is above and pushing the light one. Here we simulate the behavior of two layers of fluids with different densities, where it can be observed that a plume of heavy fluid with small vortices emerges and evolves due to the interfacial instabilities.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/momentum_exchange.mp4"></video>
+          </div>
+        </div>
+
+        <div class="column is-full-width">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/density.mp4"></video>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <div class="content">
+            <h2 class="title is-4">Varying Plasticity</h2>
+            <p>
+             Here we show different behaviors of the object bouncing on the floor when we vary the plasticity of the object. From left to right, we increase the plasticity of the object. Our simulator can simulate bouncing behavior with varying plasticity, where it can be observed energy dissipates faster with a greater plasticity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/bounce_elastic.mp4"></video>
+            <p>Elastic</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/bounce_plasto_elastic.mp4"></video>
+            <p>Elasto-plastic</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <video autoplay controls muted loop playsinline height="100%" data-src="./static/videos/bounce_plastic.mp4"></video>
+            <p>Plastic</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</section>
+
+
+<div class="container is-fullhd">
+  <hr class="solid">
+</div>
+
+<section class="section" id="BibTeX">
+
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">BibTeX</h2>
+      </div>
+    </div>
+
+    <pre><code>@inproceedings{xian2023fluidlab,
+  title={FluidLab: A Differentiable Environment for Benchmarking Complex Fluid Manipulation},
+  author={Xian, Zhou and Zhu, Bo and Xu, Zhenjia and Tung, Hsiao-Yu and Torralba, Antonio and Fragkiadaki, Katerina and Gan, Chuang},
+  booktitle={International Conference on Learning Representations},
+  year={2023}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            <font size="3">  
+            Site generated with template from <a href="https://github.com/nerfies/nerfies.github.io">here</a> and help from ChatGPT. 
+            </font>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // const collapsibles = document.querySelectorAll('.collapsible');
+  // collapsibles.forEach(collapsible => {
+  //   const content = collapsible.nextElementSibling;
+  //   collapsible.addEventListener('click', () => {
+  //     content.classList.toggle('active'); 
+  //     if (content.style.display === "block") {
+  //       content.style.display = "none";
+  //     } else {
+  //       content.style.display = "block";
+  //     }     
+  //     if (content.classList.contains('active')) {
+  //       videos.forEach(video => {
+  //         video.src = video.getAttribute('data-src');
+  //       });
+  //     }
+  //   });
+  // });
+  // Get the button and content elements
+  const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(collapsible => {
+    const content = collapsible.nextElementSibling;
+
+    // Add an event listener to the button to toggle the content
+    collapsible.addEventListener('click', function() {
+      this.classList.toggle("active");
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+        this.innerHTML = "Click to show videos";
+      } else {
+        content.style.display = 'block';
+        this.innerHTML = "Click to hide videos";
+        
+        // Find all the video elements within the content
+        const videos = content.querySelectorAll('video');
+        
+        // Set the src attribute of each video element
+        videos.forEach(video => {
+          if (!video.loaded) {
+            const videoSrc = video.getAttribute('data-src');
+            if (videoSrc) {
+              video.src = videoSrc;
+              video.loaded = true;
+            }
+          }
+        });
+      }
+    });
+  });
+// var buttons = document.querySelectorAll('.collapsible');
+
+// // Loop through the buttons and add a click event listener to each one
+// for (var i = 0; i < buttons.length; i++) {
+//   buttons[i].addEventListener('click', function() {
+
+//     // Get the content element that corresponds to this button
+//     var content = this.nextElementSibling;
+//     const videos = content.querySelectorAll('video');
+
+
+//     buttons[i].addEventListener('click', () => {
+//       content.classList.toggle('active');
+//     });
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "block";
+//     }
+
+//   });
+// }
+
+</script>
+
+</body>
+</html>
